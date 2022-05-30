@@ -13,7 +13,7 @@ function EditModal(props){
 	let saveChanges = function(){
 		const consept = document.querySelector("#conseptInput").value;
 		const amount = document.querySelector("#amountInput").value;
-		const category = document.querySelector("#categorySelect").value;
+		const category = document.querySelector("#categorySelectEdit").value;
 
 		Axios.put("http://localhost:3001/update", {
 	      id: props.transaction.id,
@@ -50,7 +50,7 @@ function EditModal(props){
 			  <label htmlFor="floatingInput">Concept</label>
 			</div>
 
-			<select defaultValue={props.transaction ? props.transaction.category : "Category"} id="categorySelect">
+			<select defaultValue={props.transaction ? props.transaction.category : "Category"} id="categorySelectEdit">
 				<option>Category</option>
 				<option>Food</option>
 				<option>Family</option>

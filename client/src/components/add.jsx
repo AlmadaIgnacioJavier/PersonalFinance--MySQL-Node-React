@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import Axios from 'axios'
 import Cookies from 'universal-cookie'
+import swal from 'sweetalert'
 
 function AddNew(props){
 
@@ -14,26 +15,40 @@ function AddNew(props){
 		}, 400)
 	}
 
-	let joinData = function(){
-		let amountInput = document.querySelector("#amountInput")
-		let typeSelect = document.querySelector("#typeSelect")
-		let conceptInput = document.querySelector("#conceptInput")
-		let categorySelect = document.querySelector("#categorySelect")
-		let date = new Date()
-		let today = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
-		let userMail = cookies.get('userID').mail;
+	let alertCustom = function(message){
+		swal({
+			title: message,
+			icon: "warning",
+			button: "Acept",
+			timer: 5000
+		})
+	}
 
-		Axios.post("http://localhost:3001/api/create", {
-	      consept: conceptInput.value,
-	      type: typeSelect.value,
-	      amount: amountInput.value,
-	      category: categorySelect.value,
-	      date: today,
-	      mail: userMail
-	    }).then(()=>{
-	      props.refreshTable();
-	      close()
-	    })
+	let joinData = function(){
+		const amountInput = document.querySelector("#amountInput")
+		const typeSelect = document.querySelector("#typeSelect")
+		const conceptInput = document.querySelector("#conceptInput")
+		const categorySelect = document.querySelector("#categorySelectModal")
+		const date = new Date()
+		const today = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+		const userMail = cookies.get('userID').mail;
+
+		if((amountInput.value != "") && (typeSelect.value != "Type") && (conceptInput.value != "") && (categorySelect.value != "Category")){
+			Axios.post("http://localhost:3001/api/create", {
+		      consept: conceptInput.value,
+		      type: typeSelect.value,
+		      amount: amountInput.value,
+		      category: categorySelect.value,
+		      date: today,
+		      mail: userMail
+		    }).then(()=>{
+		      props.refreshTable();
+		      close()
+		    })
+		} else{
+			alertCustom("Please complete all the entries")
+		}
+		
 	}
 
 	return(
@@ -53,7 +68,7 @@ function AddNew(props){
 			</div>
 
 			<select className="mb-3" id="typeSelect">
-				<option selected>Type</option>
+				<option>Type</option>
 				<option>Active</option>
 				<option>Pasive</option>
 			</select>
@@ -63,8 +78,8 @@ function AddNew(props){
 			  <label htmlFor="floatingInput">Concept</label>
 			</div>
 
-			<select id="categorySelect">
-				<option selected>Category</option>
+			<select id="categorySelectModal">
+				<option>Category</option>
 				<option>Food</option>
 				<option>Family</option>
 				<option>Gym</option>

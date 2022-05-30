@@ -1,0 +1,509 @@
+/*ScrollBar hide*/
+
+/*webkit navs*/
+body::-webkit-scrollbar, .newItem::-webkit-scrollbar{
+  display: none;
+}
+/*mozilla and edge*/
+body, .newItem {
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+
+body{
+  background: linear-gradient(179deg, rgba(0, 149, 59, 0.22), rgba(0, 78, 31, 0.04), transparent, transparent, transparent) no-repeat;
+}
+
+/*Nav*/
+
+nav{
+	padding: 1em !important;
+}
+
+.nav-container{
+	text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.nav-tittle{
+	padding-left: 54px;
+	width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-toggler{
+    /*Quit bootstrap shadows and borders*/
+	  border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.nav-item:hover{
+	
+    background: #0bb10052;
+    
+    
+    cursor: pointer;
+    transition: .2s;
+}
+.nav-item{
+	transition: .2s;
+	margin: 0;
+	padding: 0;
+    border-bottom: 1px solid #999;
+}
+.offcanvas-title{
+	width: 100%;
+    font-size: 1.4em;
+    text-align: start;
+}
+.offcanvas-body{
+	font-size: 1.3em;
+    padding: 0;
+    padding-top: 3em;
+}
+.offcanvas{
+	background: linear-gradient(295deg, #c8ffcf, white);
+}
+
+.nav-signIn-container{
+	padding-bottom: 3em;
+}
+.nav-signIn-container button{
+	border: none;
+    background: green;
+    font-size: 1.5em;
+    padding: 0.5em;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #fff;
+    outline: 1px solid #343434;
+    box-shadow: 3px 3px 5px 0px #606060;
+}
+
+/*Table*/
+.containerDiv{
+	  width: 75%;
+    margin: auto;
+}
+th #categorySelect{
+	  border: none;
+    font-weight: 700;
+    padding-right: 0.5em;
+}
+.table{
+	margin-bottom: 8em;
+}
+.tableContainer{
+	  width: 80%;
+    margin: auto;
+}
+.headerBalance{
+	display: flex;
+	width: 100%;
+	margin-bottom: 1em;
+}	
+.headerBalance button{
+	flex: 1;
+	border: none;
+	outline: 1px solid #ccc;
+	padding: .5em;
+	transition: .1s;
+}
+.headerBalance button:nth-child(1){
+	border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.headerBalance button:nth-child(3){
+	border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.headerBalance button:hover{
+	background: #dcdcdc;
+}
+.header-selected{
+	background-color: #ffa8a8;
+}
+.header-selected:hover, .header-selected:focus{
+  background-color: #ed8484 !important;
+}
+
+.iconEdit{
+	background-image: url(edit.png);
+    display: flex;
+    width: 1.5em;
+    height: 1.5em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    cursor: pointer;
+}
+
+.table-group-divider td{
+    max-width: 4em;
+    overflow-wrap: break-word;
+}
+
+.actualBalance{
+	width: 40%;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 5%;
+    border-radius: 30px;
+}
+
+.redTittle{
+	background: #ffe0e0;
+	outline: 1px solid #f00;
+}
+.greenTittle{
+	background: #00d73859;
+	outline: 1px solid #000;
+}
+
+.noFoundResults {
+    text-align: center;
+    background: #eee;
+    padding: 1em;
+    border-radius: 30px;
+    color: #444;
+    outline: 1px solid #0000008c;
+    width: 60%;
+    margin: 5% auto;
+}
+
+/*NewItem*/
+
+select{
+	cursor: pointer;
+}
+
+.newItem {
+    position: fixed;
+    background: #ddddddf0;
+    width: 35%;
+    height: 60vh;
+    top: 15%;
+    left: 32.5%;
+    padding-top: 2em;
+    border-radius: 20px;
+    overflow: auto;
+    outline: 1px solid #999;
+    box-shadow: 2px 3px 5px 0px #555;
+    animation: show .5s;
+}
+
+.newItemTittle{
+	  font-size: 1.9em;
+    text-align: center;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #555;
+}
+.newItem select{
+	background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    font-size: 1.2em;
+}
+.input-amount{
+	  text-align: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-bottom: 1em;
+    display: flex;
+    font-size: 1.3em;
+    width: 40%;
+    border-radius: 0;
+    border-bottom: 1px solid #000;
+    font-size: 1.3em;
+}
+
+.input-amount::-webkit-outer-spin-button,
+.input-amount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-amount {
+  -moz-appearance: textfield;
+}
+.new-amount-container{
+	  display: flex;
+    justify-content: center;
+    padding-right: 1em;
+    font-size: 1.5em;
+}
+.new-amount-container label{
+	font-size: 1.3em;
+}
+.addTransaction{
+	border: none;
+    margin: auto;
+    width: 40%;
+    border-radius: 20px;
+    padding: 0.5em;
+    outline: 1px solid #999;
+    font-weight: 500;
+    box-shadow: 2px 3px 5px #878787;
+    transition: .15s;
+}
+
+.addTransaction:hover{
+	background: #ddd;
+	transition: .15s;
+}
+
+.addTransactionContainer{
+	display: flex;
+    margin-top: 2em;
+}
+.concept-input{
+	box-shadow: 1px 2px 3px #a9a9a9;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  font-size: 1.1em;
+  text-align: center;
+}
+.concept-container{
+	  width: 60%;
+    margin: auto;
+}
+.transactionOpenContainer{
+	display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: center;
+    left: 0;
+    bottom: 5%;
+}
+.transactionOpenContainer button{
+	border: none;
+    padding: 1em;
+    outline: 1px solid #999;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 1px 2px 4px 0px #979797;
+    font-size: 1.2em;
+}
+
+/*editModal*/
+
+.deleteTransaction{
+	background: #ff7777;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0px 3px 5px black;
+}
+.deleteTransaction:hover{
+	background: #ff5555;
+}
+
+
+/*Button close of modals*/
+
+.close {
+ 	position: absolute;
+	right: 6px;
+	top: 12px;
+	width: 26px;
+	height: 20px;
+	opacity: 0.3;
+	cursor: pointer;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+ 	position: absolute;
+	left: 5px;
+	content: ' ';
+	height: 1.7em;
+	width: 2px;
+	background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+/*LOGIN*/
+
+.login-container{
+	width: 35%;
+    margin: auto;
+    margin-top: 10%;
+    background: #ddd;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 2px 1px 4px #000;
+}
+.login-container h1{
+	margin-bottom: 1em;
+}
+.registrer-div{
+	margin-top: 1.5em;
+}
+.registrer-div button{
+	border: none;
+    background: green;
+    font-size: 2em;
+    padding: 0.3em 0.5em;
+    border-radius: 30px;
+    font-weight: 500;
+    color: #fff;
+    outline: 1px solid #000;
+    margin-top: 0.5em;
+    box-shadow: 2px 2px 2px black;
+}
+
+.sendLogin-div button{
+	border: none;
+    background: #fff;
+    font-size: 1.5em;
+    padding: 0.2em 1em;
+    font-weight: 600;
+    border-radius: 30px;
+    outline: 1px solid #777;
+    box-shadow: 1px 1px 5px #c9c9c9;
+}
+
+/*INDEX*/
+
+.tableContainerIndex{
+	width: 70%;
+    margin: auto;
+}
+.tittle-index{
+	text-align: center;
+    border-bottom: 1px solid #999;
+    width: fit-content;
+    margin: auto;
+    border-top: 1px solid #999;
+    margin-bottom: 3%;
+    padding: 2%;
+}
+/*animatinos*/
+
+@keyframes show{
+	0%{
+		opacity: 0;
+		top: 200%
+	}
+	100%{
+		opacity: 1;
+		top: 15%;
+	}
+}
+@keyframes hide{
+	0%{
+		opacity: 1;
+		top: 15%
+	}
+	100%{
+		opacity: 0;
+		top: 150%;
+	}	
+}
+
+/*MEDIA QUERYS*/
+
+/*Tablets and ipads*/
+
+@media screen and (min-width: 680px) and (max-width: 1150px){
+    /*table*/
+    .actualBalance {
+        width: 60%;
+        margin: auto;
+        margin-top: 15%;
+        text-align: center;
+        padding: 2%;
+        margin-bottom: 5%;
+        border-radius: 30px;
+    }
+    .containerDiv, .tableContainer, .tableContainerIndex{
+      width: 100%;
+    }
+    /*font size text page*/
+
+    body{
+      font-size: 1.5em;
+    }
+    nav h3{
+      font-size: 1.5em;
+    }
+    .navbar-toggler-icon{
+      width: 2.5em;
+      height: 2.5em;
+    }
+
+    /*edit item size*/
+
+    .newItem{
+      width: 60%;
+      left: 20%;
+    }
+
+    /*login*/
+    .login-container h1{
+      font-size: 3em;
+    }
+    .login-container{
+      width: 60%;
+      margin-top: 20%;
+    }
+}
+
+/*MOBILE*/
+
+@media screen and (max-width: 679px){
+
+/*Table*/
+
+  .containerDiv{
+    width: 100%;
+    margin-top: 25%;
+  }
+  .actualBalance{
+    width: 70%;
+    margin-top: 25%;
+  }
+  .tableContainer, .tableContainerIndex{
+    width: 100%;
+  }
+
+/*Edit modal and Add*/
+
+  .newItem{
+    width: 90%;
+    left: 5%;
+    font-size: 1.2em;
+  }
+
+/*Login and signIn*/
+  
+  .login-container{
+    width: 90%;
+    margin-top: 30%;
+  }
+  .login-container h1{
+    font-size: 3em;
+  }
+}

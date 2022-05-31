@@ -12,6 +12,9 @@ app.use(express.json());
 
 // DATABASE
 
+// You have to create a database named "budget"
+// After that, put here yout password and user of MySql
+
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",

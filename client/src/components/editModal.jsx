@@ -1,5 +1,6 @@
 import {useEffect} from 'react'
 import Axios from 'axios'
+import swal from 'sweetalert'
 
 function EditModal(props){
 	
@@ -10,23 +11,37 @@ function EditModal(props){
 		}, 400)
 	}
 
+	let alertCustom = function(message){
+		swal({
+			title: message,
+			icon: "warning",
+			button: "Acept",
+			timer: 5000
+		})
+	}
+
 	let saveChanges = function(){
 		const consept = document.querySelector("#conseptInput").value;
 		const amount = document.querySelector("#amountInput").value;
 		const category = document.querySelector("#categorySelectEdit").value;
 
-		Axios.put("http://localhost:3001/update", {
-	      id: props.transaction.id,
-	      consept: consept,
-	      amount: amount,
-	      category: category
-	    }).then(()=>{
-	      console.log("se cargo el cambio")
-	      props.refreshTable()
-	      close()
-	    }).catch((error)=>{
-	      console.log(error)
-	    })
+		if(consept != "" && amount != "" && category != "Category"){
+			Axios.put("http://localhost:3001/update", {
+		      id: props.transaction.id,
+		      consept: consept,
+		      amount: amount,
+		      category: category
+		    }).then(()=>{
+		      console.log("se cargo el cambio")
+		      props.refreshTable()
+		      close()
+		    }).catch((error)=>{
+		      console.log(error)
+		    })
+		} else{
+			alertCustom("Please complete all the entries")
+		}
+		
 	}
 
 	let deleteTransaction = function(){

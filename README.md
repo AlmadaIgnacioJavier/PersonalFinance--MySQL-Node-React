@@ -1,4 +1,4 @@
-# [💰 Personal Finance App (URL)](https://personalfinance-30-05-2022.web.app)
+# 💰 Personal Finance App
 ## ❓ What is?
 Its a SPA with the aim of controlling personal finances, controlling both income and expenses
 ## 🛠️ With what technologies was it developed?
